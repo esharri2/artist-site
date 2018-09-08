@@ -9,13 +9,13 @@ nav.navbar {
     height: $nav-height;    
     background-color:inherit;
     z-index:100;
+    padding:5px;
     a {
         text-decoration: none;
         color: $bg-contrast-1;
     }
     .active {
         @extend %link-hover;
-
     }
     .logo {
         text-transform: uppercase;
@@ -23,15 +23,31 @@ nav.navbar {
         padding: 2px 5px;
         margin-left:5px;
     }
-    .links {
-        margin-right:10px;
-        display: flex;
-        .link {
-            padding: 2px 5px;
-            text-transform: uppercase;
-        }
-        .link:hover {
-            @extend %link-hover;
+    .navlink:hover {
+        // @extend %link-hover;
+        font-weight:bold;
+    }
+
+}
+
+.navlinks {
+    // margin-right:10px;
+    display: flex;
+    a {
+        text-decoration: none;
+        color: $bg-contrast-1;
+    }
+    .navlink {
+        padding: 2px 5px;
+        text-transform: uppercase;
+    }  
+}
+
+@media (max-width:650px){
+    nav.navbar {
+        flex-direction:column;
+        .logo {
+            padding-bottom:10px;
         }
     }
 }

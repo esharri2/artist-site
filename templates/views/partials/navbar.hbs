@@ -1,9 +1,9 @@
 <nav class="navbar">
     <div class="logo"><a href="/">{{companyName}}</a></div>
-    <div class="links">
+    <div class="navlinks">
         {{# each navLinks}}
         <div>
-            <a {{#ifeq ../section key}}class="active link" {{else}}class="link"{{/ifeq}} href="{{ href }}">{{ label }}</a>
+            <a {{#ifeq ../section key}}class="active navlink" {{else}}class="navlink"{{/ifeq}} href="{{ href }}">{{ label }}</a>
         </div>
         {{/each}}
     </div>

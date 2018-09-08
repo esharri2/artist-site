@@ -17,4 +17,7 @@ exports = module.exports = function (app) {
   app.get('/about', routes.views.about);
   app.get('/contact', routes.views.contact);
   app.get('/team', routes.views.team);
+  app.get('/categories', routes.views.categories);
+  app.get('/paintings', routes.views.paintings);
+  app.get('/paintings/:category', routes.views.paintings);
 };

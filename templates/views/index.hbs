@@ -1,11 +1,23 @@
 <div class="index">
-    <h1>{{companyName}}</h1>
-    <img src="./media/fire.jpg"/>
-    <nav class="homepage">
+    <nav class="homepage navlinks">
+        <h1>{{companyName}}</h1>
+        <div class="link-wrapper">
         {{# each navLinks}}
-        <div {{#ifeq ../section key}}class="active" {{else}}{{/ifeq}}>
-            <a class="link" href="{{ href }}">{{ label }}</a>
+        <div {{#ifeq ../section key}} class="active navlink" {{else}} class="navlink" {{/ifeq}}>
+            <a href="{{ href }}">{{ label }}</a>
         </div>
         {{/each}}
+        </div>
     </nav>
+    <img id="splash" src="./media/fake-art.jpg" />
 </div>
+
+<script>
+    function setWidth() {
+        console.log("fire")
+        const imgWidth = document.getElementById('splash').offsetWidth;
+        document.querySelector("nav.homepage").style.width = `${imgWidth}px`;
+    }
+    document.addEventListener('load', setWidth, true);
+    window.addEventListener('resize', setWidth, false);
+</script>

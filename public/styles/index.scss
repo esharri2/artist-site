@@ -1,11 +1,11 @@
 @import './reset';
 //COLORS
-$background: #89817C;
-$background-light: #aea9a5;
-$bg-contrast-1: #f9f8f8;
+$background: #f4f4f4;
+$background-light: #e7e7e7;
+$bg-contrast-1: #373737;
+$bg-contrast-2: #c0B283;
 //FONTS
-$title-font: 'Work Sans',
-sans-serif;
+$title-font: 'Cormorant Garamond', serif;
 $body-font: 'Open Sans',
 Arial,
 sans-serif;
@@ -23,8 +23,10 @@ body {
 @import './homepage';
 @import './navbar';
 @import './news';
-@import './contact';
+@import './linklist';
 @import './team';
+@import './paintings';
+
 
 
 %link-hover {
@@ -42,6 +44,10 @@ body {
 }
 
 //Global styles
+
+* {
+    box-sizing: border-box;
+}
 
 .container {
     margin: $nav-height *2 auto 0 auto;

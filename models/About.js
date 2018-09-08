@@ -1,12 +1,6 @@
 var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
-/**
- * Post Model
- * 
- * ==========
- */
-
 var About = new keystone.List('About',
 	{
 		nocreate: true,

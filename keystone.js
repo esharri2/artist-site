@@ -2,13 +2,10 @@ var keystone = require('keystone');
 var handlebars = require('express-handlebars');
 require('dotenv').config()
 
-console.log(process.env.KEYSTONESECRET);
-
 //Read about more options here:
 //https://keystonejs.com/documentation/configuration/
 keystone.init({
-    //   'cookie secret': process.env.KEYSTONESECRET,
-    'cookie secret': "test",
+      'cookie secret': process.env.KEYSTONESECRET,
     'name': 'prodco',
     'sass': 'public',
 	'static': 'public',

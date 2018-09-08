@@ -1,52 +1,47 @@
 .index {
-    position: relative;
-    img {
-        filter: grayscale(1) opacity(.1);
-        width: auto;
-        height: 80vh;
-        position: absolute;
-        z-index: -1;
-    } // background:  linear-gradient(
-    //     rgba(137, 129, 124, 0.7), 
-    //     rgba(137, 129, 124, 0.9)
-    //   ),url('../media/fire.jpg');
-    // background-origin:border-box;
-    // background-size: 350px;
-    // background-repeat: no-repeat;
-    // background-position: center; 
-    // filter:gray;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     height: 100vh;
-    h1 {
-        animation: fadeIn 1s 1;
-        font-size: calc(20px + 2.5vw);
-        padding: 0 5px;
-        text-transform: uppercase; // font-size: 50px;
-        font-weight: 100;
-        text-align: center;
-    }
+    width:100vw;
+    padding:10px;
     nav.homepage {
         display: flex;
         justify-content: space-between;
-        padding: 20px 0;
-        div {
-            box-sizing: border-box;
+        padding: 15px 0;
+        .link-wrapper {
+            display: flex;
+            justify-content:center;
+            .navlink {
+                display: flex;
+                align-items: flex-end;
+            }
+            .navlink:hover a {                
+                font-weight:bold;
+            }
         }
-        .link {
-            box-sizing: border-box;
-            text-decoration: none;
-            color: $bg-contrast-1;
-            text-transform: uppercase;
-            font-weight: 200;
-            margin: 0 10px;
-            padding: 5px;
-            animation: fadeIn 1s 1;
-        }
-        .link:hover {
-            @extend %link-hover;
+    }
+    h1 {
+        // animation: fadeIn 1s 1;
+        font-size: 24px;
+        padding: 0 5px;
+        text-transform: uppercase; // font-size: 50px;
+        font-weight: 300;
+        text-align: center;
+    }
+    img {    
+        display:block;    
+        max-height: 80vh;
+        max-width:100%;
+    }
+}
+
+@media (max-width:650px){
+    nav.homepage {
+        flex-direction:column;
+        h1 {
+            padding-bottom:5px;
         }
     }
 }

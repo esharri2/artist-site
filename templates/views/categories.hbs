@@ -1,0 +1,9 @@
+{{>navbar }}
+
+<div class="container categories linklist">
+  {{#each categories}}
+  <div class="link">
+    <a href="/paintings/{{key}}"><div class="linkLabel">{{name}}</div></a>
+  </div>
+  {{/each}}
+</div>
