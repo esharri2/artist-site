@@ -7,15 +7,23 @@
             <figcaption>
                 <span class="title">{{painting.current.title}}</span>
                 <span> | </span>
-                <span class="title">{{painting.current.dimensions}}</span>
+                <span class="dimensions">{{painting.current.dimensions}}</span>
                 <span> | </span>
-                <span class="title">{{painting.current.medium}}</span>
+                <span class="medium">{{painting.current.medium}}</span>
+                {{#if painting.current.sold}}
+                <span> | </span>
+                <span class="sold">SOLD</span>
+                {{/if}}
             </figcaption>
         </figure>
         <nav>
-            <a href="/painting/{{painting.previous._id}}">◀</i></a>
-            <span>1 of 10</span>
-            <a href="/painting/{{painting.following._id}}">▶</a>
+            {{#if painting.previous._id}}
+            <a href="/paintings/painting/{{cat}}/{{painting.previous._id}}">←</a>
+            {{/if}}
+            <span>{{painting.position}} of {{painting.total}}</span>
+            {{#if painting.following._id}}
+            <a href="/paintings/painting/{{cat}}/{{painting.following._id}}">→</a>
+            {{/if}}
         </nav>
     </div>
 </div>

@@ -11,6 +11,9 @@ module.exports = function (req, res) {
 
     var Art = keystone.list('Art');
 
+    console.log(req.params)
+
+
     view.on('init', function (next) {
         var q = Art.model.find().populate("grouping");
         q.exec(function (err, results) {    
@@ -46,6 +49,8 @@ module.exports = function (req, res) {
                 }
             })
             locals.paintings = columns;
+            locals.cat = req.params.category;
+            console.log(locals);
             next(err);
         })
     })

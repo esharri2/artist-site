@@ -14,6 +14,8 @@ Art.add({
     dimensions: {type: String},
     image:{ type: Types.CloudinaryImage },
     grouping: { type: Types.Relationship, ref: 'ArtCategory', many: false },
+    sold: { type: Types.Boolean, default: false, }
+
 });
 
 Art.defaultColumns = 'title';
