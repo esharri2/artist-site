@@ -93,7 +93,6 @@ nav.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 2em;
   background-color: inherit;
   z-index: 100;
   padding: 5px; }
@@ -196,11 +195,30 @@ nav.navbar {
     padding: 0 3px; }
     .paintings.container .column img {
       vertical-align: middle;
-      width: 100%;
-      margin-top: 6px; }
+      width: 100%; }
+  .paintings.container figure {
+    position: relative;
+    margin-top: 6px; }
+  .paintings.container figure:hover figcaption {
+    height: auto;
+    opacity: .8; }
+  .paintings.container figcaption {
+    background-color: #f4f4f4;
+    opacity: 0;
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    bottom: 0;
+    color: #373737;
+    padding: 5px 0;
+    transition: opacity .4s ease-in; }
+    .paintings.container figcaption div {
+      padding: 0 4px; }
+    .paintings.container figcaption .title {
+      text-transform: uppercase; }
 
 @media screen and (max-width: 800px) {
-  .column {
+  .paintings.container .column {
     flex: 50%;
     max-width: 50%; } }
 
@@ -209,6 +227,35 @@ nav.navbar {
   .column {
     flex: 100%;
     max-width: 100%; } }
+
+.single-painting {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; }
+  .single-painting div {
+    width: 100%; }
+  .single-painting figure {
+    width: 100%; }
+    .single-painting figure img {
+      height: 70vh;
+      margin: 0 auto;
+      display: block; }
+    .single-painting figure figcaption {
+      text-align: center;
+      padding: 5px 0; }
+      .single-painting figure figcaption .title {
+        font-style: italic; }
+  .single-painting nav {
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px 0; }
+    .single-painting nav span {
+      vertical-align: text-top; }
+    .single-painting nav a {
+      font-size: 1.5em;
+      text-decoration: none;
+      color: #373737; }
 
 nav.navbar .active {
   border-bottom: 0.5px solid #373737; }

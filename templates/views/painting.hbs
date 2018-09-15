@@ -1,0 +1,21 @@
+ {{>navbar }}
+
+<div class="container single-painting">
+    <div>
+        <figure>
+            <img src="{{painting.current.image.secure_url}}" />
+            <figcaption>
+                <span class="title">{{painting.current.title}}</span>
+                <span> | </span>
+                <span class="title">{{painting.current.dimensions}}</span>
+                <span> | </span>
+                <span class="title">{{painting.current.medium}}</span>
+            </figcaption>
+        </figure>
+        <nav>
+            <a href="/painting/{{painting.previous._id}}">◀</i></a>
+            <span>1 of 10</span>
+            <a href="/painting/{{painting.following._id}}">▶</a>
+        </nav>
+    </div>
+</div>

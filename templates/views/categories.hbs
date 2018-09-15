@@ -3,7 +3,10 @@
 <div class="container categories linklist">
   {{#each categories}}
   <div class="link">
-    <a href="/paintings/{{key}}"><div class="linkLabel">{{name}}</div></a>
+    <a href="./paintings/{{key}}"><div class="linkLabel">{{name}}</div></a>
   </div>
   {{/each}}
+  <div class="link">
+        <a href="./paintings/all"><div class="linkLabel">See all</div></a>
+  </div>
 </div>

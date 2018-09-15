@@ -7,21 +7,21 @@ module.exports = function (req, res) {
     var view = new keystone.View(req, res);
     var locals = res.locals;
     locals.section = 'Art';
+    locals.cat = req.params.category
 
     var Art = keystone.list('Art');
 
     view.on('init', function (next) {
         var q = Art.model.find().populate("grouping");
-        q.exec(function (err, results) {
+        q.exec(function (err, results) {    
 
             let filteredResults = [];
          
-            if (req.params.category) {
+            if (req.params.category && req.params.category !== "all") {
                 filteredResults = results.filter(result=> result.grouping.key === req.params.category);
             } else {
                 filteredResults = results
             }
-
             const numOfColumns = 3;
 
             //To do - create these dynamically based on "numOfColumns"

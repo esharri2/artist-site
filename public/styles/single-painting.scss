@@ -1,0 +1,38 @@
+.single-painting {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    div {
+        width: 100%; // background-color:green;
+    }
+    figure {
+        width: 100%;
+        img {
+            height: 70vh;
+            margin: 0 auto;
+            display: block;
+        }
+        figcaption {
+            // background-color:pink;
+            text-align: center;
+            padding: 5px 0;
+            .title {
+                font-style: italic;
+            }
+        }
+    }
+    nav {
+        margin: 0 auto;
+        text-align: center; // background-color: aqua;
+        padding: 5px 0;
+        span {
+            vertical-align: text-top;
+        }
+        a {
+            font-size: 1.5em;
+            text-decoration: none;
+            color: $bg-contrast-1;
+        }
+    }
+}

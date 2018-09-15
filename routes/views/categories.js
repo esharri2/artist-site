@@ -13,9 +13,8 @@ module.exports = function (req, res) {
     view.on('init', function (next) {
         var q = Category.model.find();
         q.exec(function (err, results) {
-
+            //TODO can just asign the results array to locals
             results.forEach(res => {
-                console.log(res)
                 locals.categories.push(res)
             })
             next(err);
