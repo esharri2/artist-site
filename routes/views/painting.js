@@ -25,9 +25,9 @@ module.exports = function (req, res) {
             posParam.grouping = res._id;
             currParam.grouping = res._id;
             prevParam.grouping = res._id;
-            followingParam = res._id;
+            followingParam.grouping = res._id;
         }
-
+        
         Promise.all([
             //Total
             Art.model.count(countParam),
@@ -41,6 +41,7 @@ module.exports = function (req, res) {
             Art.model.findOne(followingParam).sort({ _id: 1 })
         ]).then(([total, position, current, previous, following], err) => {
             locals.painting = { total, position: position + 1, current, previous, following };
+            // console.log(locals.painting);
             locals.cat = res ? res.key : "all";        
             next();
         }).catch(function (err) {
@@ -60,8 +61,6 @@ module.exports = function (req, res) {
             getPaintingData(next);
         }
     })
-
-
     view.render('painting');
 
 };

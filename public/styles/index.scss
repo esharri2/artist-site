@@ -3,9 +3,11 @@
 $background: #f4f4f4;
 $background-light: #e7e7e7;
 $bg-contrast-1: #373737;
-$bg-contrast-2: #c0B283;
+$bg-contrast-1-light: #858585;
+$bg-contrast-2: #dbdbdb;
 //FONTS
-$title-font: 'Cormorant Garamond', serif;
+$title-font: 'Cormorant Garamond',
+serif;
 $body-font: 'Open Sans',
 Arial,
 sans-serif;
@@ -22,28 +24,31 @@ body {
 
 @import './homepage';
 @import './navbar';
-@import './news';
 @import './linklist';
-@import './team';
+@import './galleries';
 @import './paintings';
 @import './single-painting';
+@import './categories';
+
+%nav-hover {
+    color: $bg-contrast-1-light;
+}
 
 %link-hover {
-    border-bottom: 0.5px solid $bg-contrast-1;
+    color:$background;
+    background-color: $bg-contrast-1;
 }
 
 @keyframes fadeIn {
     0% {
-        color: $background;
-        margin-bottom: -20px
+        opacity: 0;
     }
     100% {
-        top: $bg-contrast-1;
+        opacity: 1;
     }
 }
 
 //Global styles
-
 * {
     box-sizing: border-box;
 }
@@ -51,22 +56,27 @@ body {
 .container {
     margin: $nav-height*2 auto 0 auto;
     max-width: 600px;
-    padding:0 10px;
+    padding: 0 10px;
+    animation:fadeIn 1s 1 ease-in;
+    h1 {
+        margin: 40px 0;
+        font-size: 30px;
+    }
 }
 
 button {
     border: solid .5px $bg-contrast-1;
-    background:transparent;
-    color:$bg-contrast-1;
-    padding:8px;
+    background: transparent;
+    color: $bg-contrast-1;
+    padding: 8px;
     margin-top: 10px;
-    transition:all .1s;
-
+    transition: all .1s;
 }
 
-button:focus, button:hover {
-    background:$background-light;
-    outline:none;
+button:focus,
+button:hover {
+    background: $background-light;
+    outline: none;
 }
 
 h1 {
@@ -74,16 +84,11 @@ h1 {
     font-weight: 300;
 }
 
-ul,
-ol,
-p {
-    font-family: $body-font;
-}
-
 p {
     line-height: 1.1;
+    font-size: 1.1em;
     margin: 10px 0;
-    font-family: $body-font;
+    font-family: $title-font;
 }
 
 ul {
@@ -106,3 +111,6 @@ ol {
     padding-left: 40px;
 }
 
+img {
+    animation: fadeIn 1.5s 1 ease-in;
+}

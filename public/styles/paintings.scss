@@ -1,4 +1,21 @@
 .paintings.container {
+    .category-title {
+        width: 100%;
+        padding: 5px 0 15px 0;
+        h1 {
+            font-style: italic;
+            font-size: 24px;
+            margin: 0 auto;
+            text-align: center;
+
+
+        }
+        p {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 10px 0;
+        }
+    }
     display: flex;
     flex-wrap: wrap;
     max-width: 1200px;
@@ -13,7 +30,7 @@
     }
     figure {
         position: relative;
-        margin-top:6px;
+        margin-top: 6px;
     }
     figure:hover figcaption {
         height: auto;
@@ -24,7 +41,7 @@
         opacity: 0;
         position: absolute;
         z-index: 100;
-        width:100%;
+        width: 100%;
         bottom: 0;
         color: $bg-contrast-1;
         padding: 5px 0;
@@ -38,17 +55,16 @@
     }
 }
 
-@media screen and (max-width: 800px) {
-    .paintings.container .column {
-        flex: 50%;
-        max-width: 50%;
-    }
-}
-
+// @media screen and (max-width: 800px) {
+//     .paintings.container .column {
+//         flex: 50%;
+//         max-width: 50%;
+//     }
+// }
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 
-@media screen and (max-width: 600px) {
-    .column {
+@media screen and (max-width: 675px) {
+    .paintings.container .column {
         flex: 100%;
         max-width: 100%;
     }

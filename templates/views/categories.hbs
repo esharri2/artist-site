@@ -1,12 +1,29 @@
 {{>navbar }}
 
 <div class="container categories linklist">
+  <h1>Collections</h1>
+  <div class="link">
+    <a href="./paintings/all">
+      <div class="linkLabel">See all paintings</div>
+    </a>
+  </div>
   {{#each categories}}
   <div class="link">
-    <a href="./paintings/{{key}}"><div class="linkLabel">{{name}}</div></a>
+    <a href="./paintings/{{key}}">
+      <h2 class="linkLabel">{{name}}</h2>
+      <div class="linkBody">
+        {{#if thumb}}
+        <div class="thumb">
+          <img src="{{thumb.secure_url}}" />
+
+        </div>
+        {{/if}}
+        {{#if description}}
+        <p class="description">{{description}}</p>
+        {{/if}}
+      </div>
+    </a>
   </div>
   {{/each}}
-  <div class="link">
-        <a href="./paintings/all"><div class="linkLabel">See all</div></a>
-  </div>
+
 </div>

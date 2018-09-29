@@ -1,0 +1,22 @@
+{{>navbar }}
+
+<div class="container galleries linklist">
+    <h1>Galleries</h1>
+    {{#if galleries}}
+    <div class="addresses">
+        {{#each galleries}}
+        <div class="link">
+            <a href="{{website}}">
+                <h2>{{name}}</h2>
+                <p>{{streetAddress}} {{#if streetAddress2}}, {{streetAddress2}}{{/if}} </p>
+                <p>{{state}}, {{city}}</p>
+            </a>
+        </div>
+        {{/each}}
+    </div>
+
+    {{else}}
+    <p>Check back soon for a list of galleries.</p>
+    {{/if}}
+
+</div>

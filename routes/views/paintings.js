@@ -7,52 +7,55 @@ module.exports = function (req, res) {
     var view = new keystone.View(req, res);
     var locals = res.locals;
     locals.section = 'Art';
-    locals.cat = req.params.category
 
     var Art = keystone.list('Art');
-
-    console.log(req.params)
-
+    var Category = keystone.list('ArtCategory');
 
     view.on('init', function (next) {
-        var q = Art.model.find().populate("grouping");
-        q.exec(function (err, results) {    
 
-            let filteredResults = [];
-         
-            if (req.params.category && req.params.category !== "all") {
-                filteredResults = results.filter(result=> result.grouping.key === req.params.category);
-            } else {
-                filteredResults = results
-            }
-            const numOfColumns = 3;
+        var catQuery = Category.model.findOne({ key: req.params.category });
+        catQuery.exec(function (err, category) {
+            locals.cat = category ? category : { key: "all" };
+            var q = Art.model.find().populate("grouping");
+            q.exec(function (err, results) {
 
-            //To do - create these dynamically based on "numOfColumns"
-            const columns = {
-                col1: [],
-                col2: [],
-                col3: []
-            }
-            const col1 = [];
-            const col2 = [];
-            const col3 = [];
+                let filteredResults = [];
 
-            const columnQuantity = filteredResults.length / numOfColumns;
-
-            filteredResults.forEach((painting, index) => {
-                if (index >= 0 && index < columnQuantity) {
-                    columns.col1.push(painting)
-                } else if (index >= columnQuantity && index < columnQuantity * 2) {
-                    columns.col2.push(painting)
+                if (req.params.category && req.params.category !== "all") {
+                    filteredResults = results.filter(result => result.grouping.key === req.params.category);
                 } else {
-                    columns.col3.push(painting)
+                    filteredResults = results
                 }
+                const numOfColumns = 3;
+
+                //To do - create these dynamically based on "numOfColumns"
+                const columns = {
+                    col1: [],
+                    col2: [],
+                    col3: []
+                }
+                const col1 = [];
+                const col2 = [];
+                const col3 = [];
+
+                const columnQuantity = filteredResults.length / numOfColumns;
+
+                filteredResults.forEach((painting, index) => {
+                    if (index >= 0 && index < columnQuantity) {
+                        columns.col1.push(painting)
+                    } else if (index >= columnQuantity && index < columnQuantity * 2) {
+                        columns.col2.push(painting)
+                    } else {
+                        columns.col3.push(painting)
+                    }
+                })
+                locals.paintings = columns;
+                next(err);
             })
-            locals.paintings = columns;
-            locals.cat = req.params.category;
-            console.log(locals);
-            next(err);
         })
+
+
+
     })
     view.render('paintings');
 };

@@ -49,6 +49,7 @@ body {
   font-family: "Cormorant Garamond", serif; }
 
 .index {
+  animation: fadeIn .5s 1 ease-in;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,8 +67,6 @@ body {
       .index nav.homepage .link-wrapper .navlink {
         display: flex;
         align-items: flex-end; }
-      .index nav.homepage .link-wrapper .navlink:hover a {
-        font-weight: bold; }
   .index h1 {
     font-size: 24px;
     padding: 0 5px;
@@ -95,7 +94,8 @@ nav.navbar {
   align-items: center;
   background-color: inherit;
   z-index: 100;
-  padding: 5px; }
+  padding: 5px;
+  animation: fadeIn .2s 1 ease-in; }
   nav.navbar a {
     text-decoration: none;
     color: #373737; }
@@ -104,8 +104,6 @@ nav.navbar {
     font-size: 20px;
     padding: 2px 5px;
     margin-left: 5px; }
-  nav.navbar .navlink:hover {
-    font-weight: bold; }
 
 .navlinks {
   display: flex; }
@@ -120,28 +118,9 @@ nav.navbar {
   nav.navbar {
     flex-direction: column; }
     nav.navbar .logo {
-      padding-bottom: 10px; } }
-
-.news h1 {
-  margin: 10px 0; }
-
-.news .timestamp {
-  font-weight: 200;
-  text-transform: uppercase; }
-
-.news .post {
-  padding-top: 20px; }
-  .news .post .content {
-    overflow: hidden;
-    transition: all 1s;
-    position: relative; }
-    .news .post .content .fadeOut {
-      display: none;
-      position: absolute;
-      bottom: 0em;
-      width: 100%;
-      height: 4em;
-      background-image: linear-gradient(rgba(137, 129, 124, 0) 0%, #89817c 100%); }
+      padding-bottom: 10px; }
+  .container {
+    margin: 8em auto 0 auto; } }
 
 .linklist {
   display: flex;
@@ -149,46 +128,59 @@ nav.navbar {
   min-height: 60vh;
   align-items: center;
   justify-content: center; }
-
-.link {
-  color: #373737;
-  margin: 10px;
-  min-width: 300px;
-  color: #373737; }
-  .link a {
-    border: solid 1px #373737;
-    display: block;
-    padding: 20px;
-    text-decoration: none;
-    transition: all .1s; }
-  .link a:hover,
-  .link a:focus {
-    background: #c0B283; }
-  .link i {
-    color: #373737; }
-  .link .linkLabel {
-    text-decoration: none;
-    text-transform: uppercase;
+  .linklist .link {
     color: #373737;
-    font-family: "Cormorant Garamond", serif;
-    display: inline;
-    margin-left: 10px; }
+    margin: 10px;
+    min-width: 300px; }
+    .linklist .link a {
+      border: solid 1px #dbdbdb;
+      color: #373737;
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      transition: all .2s; }
+    .linklist .link i {
+      color: inherit;
+      margin-right: 10px; }
+    .linklist .link .linkLabel {
+      text-decoration: none;
+      text-transform: uppercase;
+      font-family: "Cormorant Garamond", serif;
+      display: inline; }
+    .linklist .link p {
+      color: inherit; }
 
-.team .person {
-  margin: 30px 0; }
-  .team .person h1 {
-    padding: 5px 0; }
-  .team .person img {
-    width: 150px; }
+.galleries .addresses {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly; }
 
-.team .role {
-  font-weight: 200;
-  text-transform: uppercase; }
+.galleries .link {
+  min-width: 200px; }
+  .galleries .link h2 {
+    font-style: italic;
+    font-size: 20px;
+    color: inherit; }
+
+.galleries.container {
+  max-width: 1000px; }
 
 .paintings.container {
   display: flex;
   flex-wrap: wrap;
   max-width: 1200px; }
+  .paintings.container .category-title {
+    width: 100%;
+    padding: 5px 0 15px 0; }
+    .paintings.container .category-title h1 {
+      font-style: italic;
+      font-size: 24px;
+      margin: 0 auto;
+      text-align: center; }
+    .paintings.container .category-title p {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 10px 0; }
   .paintings.container .column {
     flex: calc(100% / 3);
     max-width: calc(100% / 3);
@@ -217,14 +209,9 @@ nav.navbar {
     .paintings.container figcaption .title {
       text-transform: uppercase; }
 
-@media screen and (max-width: 800px) {
-  .paintings.container .column {
-    flex: 50%;
-    max-width: 50%; } }
-
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
+@media screen and (max-width: 675px) {
+  .paintings.container .column {
     flex: 100%;
     max-width: 100%; } }
 
@@ -260,15 +247,45 @@ nav.navbar {
       text-decoration: none;
       color: #373737; }
 
-nav.navbar .active {
-  border-bottom: 0.5px solid #373737; }
+.categories .link {
+  width: 100%; }
+  .categories .link a {
+    width: 100%; }
+  .categories .link .linkLabel {
+    font-style: italic;
+    text-transform: none;
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin: 25px 0; }
+  .categories .link .linkBody {
+    display: flex; }
+    .categories .link .linkBody .thumb {
+      flex-basis: auto;
+      width: 40%;
+      flex-grow: 1; }
+      .categories .link .linkBody .thumb img {
+        width: 100%; }
+    .categories .link .linkBody p {
+      margin: 0;
+      padding: 0px 20px;
+      flex-basis: auto;
+      width: 60%; }
+
+.index nav.homepage .link-wrapper .navlink:hover a, nav.navbar .active, nav.navbar .navlink:hover {
+  color: #858585; }
+
+.linklist .link a:hover,
+.linklist .link a:focus {
+  color: #f4f4f4;
+  background-color: #373737; }
 
 @keyframes fadeIn {
   0% {
-    color: #f4f4f4;
-    margin-bottom: -20px; }
+    opacity: 0; }
   100% {
-    top: #373737; } }
+    opacity: 1; } }
 
 * {
   box-sizing: border-box; }
@@ -276,7 +293,11 @@ nav.navbar .active {
 .container {
   margin: 4em auto 0 auto;
   max-width: 600px;
-  padding: 0 10px; }
+  padding: 0 10px;
+  animation: fadeIn 1s 1 ease-in; }
+  .container h1 {
+    margin: 40px 0;
+    font-size: 30px; }
 
 button {
   border: solid 0.5px #373737;
@@ -286,7 +307,8 @@ button {
   margin-top: 10px;
   transition: all .1s; }
 
-button:focus, button:hover {
+button:focus,
+button:hover {
   background: #e7e7e7;
   outline: none; }
 
@@ -294,15 +316,11 @@ h1 {
   font-size: 20px;
   font-weight: 300; }
 
-ul,
-ol,
-p {
-  font-family: "Open Sans", Arial, sans-serif; }
-
 p {
   line-height: 1.1;
+  font-size: 1.1em;
   margin: 10px 0;
-  font-family: "Open Sans", Arial, sans-serif; }
+  font-family: "Cormorant Garamond", serif; }
 
 ul {
   display: block;
@@ -321,3 +339,6 @@ ol {
   margin-left: 0;
   margin-right: 0;
   padding-left: 40px; }
+
+img {
+  animation: fadeIn 1.5s 1 ease-in; }

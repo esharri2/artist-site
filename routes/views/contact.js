@@ -13,9 +13,7 @@ module.exports = function (req, res) {
     view.on('init', function (next) {
         var q = Contact.model.find();
         q.exec(function (err, results) {
-
             results.forEach(res => {
-                console.log(res)
                 let iconName;
                 const platform = res.platform.toLowerCase();
 
@@ -33,9 +31,7 @@ module.exports = function (req, res) {
                         iconName = "fab fa-instagram";
                         break;
                 }
-
                 res.icon = iconName;
-                console.log(res.icon);
                 locals.contacts.push(res)
             })
             next(err);

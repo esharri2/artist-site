@@ -1,16 +1,20 @@
 {{>navbar }}
 
 <div class="container paintings">
+  <div class="category-title">
+    <h1>{{cat.name}}</h1>
+    <p>{{cat.description}}</p>
+  </div>
   {{#each paintings}}
   <div class="column">
     {{#each this}}
-    <a href="./painting/{{../../cat}}/{{id}}">
+    <a href="./painting/{{../../cat.key}}/{{id}}">
       <figure>
         <img src={{image.secure_url}} alt={{title}} />
         <figcaption>
           <div class="title">{{this.title}}</div>
           <div class="medium">{{this.medium}}</div>
-          <div class="dimensions">{{this.dimensions}}</div>          
+          <div class="dimensions">{{this.dimensions}}</div>
         </figcaption>
       </figure>
     </a>

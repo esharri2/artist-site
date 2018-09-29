@@ -5,17 +5,17 @@ module.exports = function (req, res) {
 
     var view = new keystone.View(req, res);
     var locals = res.locals;
-    locals.section = 'about';
+    locals.section = 'gallery';
  
-    var About = keystone.list('About');
+    var Gallery = keystone.list('Gallery');
 
     view.on('init', function (next) {
-        var q = About.model.find();
+        var q = Gallery.model.find();
         q.exec(function(err, results){
-            locals.about = results[0].content;
+            locals.galleries = results;
             next(err);
         })
       })
 
-    view.render('about');
+    view.render('galleries');
   };

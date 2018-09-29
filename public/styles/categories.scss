@@ -1,0 +1,36 @@
+.categories {
+   
+    .link {
+        width: 100%;
+        a {
+            width: 100%;
+        }
+        .linkLabel {
+            font-style: italic;
+            text-transform: none;
+            font-size: 20px;
+            text-align: center;
+            width: 100%;
+            display: block;
+            margin: 25px 0;
+        }
+        .linkBody {
+            display: flex;
+            .thumb {
+                flex-basis:auto;
+                width:40%;
+                flex-grow:1;
+                img {
+                    width: 100%;
+                }
+            }
+            p {
+                margin: 0;
+                padding: 0px 20px;
+                flex-basis:auto;
+                width:60%;
+
+            }
+        }
+    }
+}

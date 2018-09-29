@@ -17,6 +17,7 @@ module.exports = function (req, res) {
             results.forEach(res => {
                 locals.categories.push(res)
             })
+            console.log(locals.categories)
             next(err);
         })
     })

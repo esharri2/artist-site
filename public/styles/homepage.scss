@@ -1,4 +1,5 @@
 .index {
+    animation:fadeIn .5s 1 ease-in;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,7 +19,7 @@
                 align-items: flex-end;
             }
             .navlink:hover a {                
-                font-weight:bold;
+                @extend %nav-hover;
             }
         }
     }
