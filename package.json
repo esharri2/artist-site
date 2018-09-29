@@ -1,22 +1,14 @@
 {
-  "name": "prodco",
+  "name": "Artist Site",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node keystone.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/esharri2/prodco.git"
-  },
+  },  
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/esharri2/prodco/issues"
-  },
-  "homepage": "https://github.com/esharri2/prodco#readme",
+  "license": "ISC",  
   "dependencies": {
     "dotenv": "^6.0.0",
     "express-handlebars": "^3.0.0",

@@ -5,10 +5,11 @@ require('dotenv').config()
 //Read about more options here:
 //https://keystonejs.com/documentation/configuration/
 keystone.init({
-      'cookie secret': process.env.KEYSTONESECRET,
-    'name': 'prodco',
+    'cookie secret': process.env.KEYSTONESECRET,
+    'name': 'art site',
     'sass': 'public',
-	'static': 'public',
+    'static': 'public',
+    'mongo': process.env.MONGO_URI || "mongodb://localhost/your-db",
     'user model': 'User',
     'auto update': true,
     'auth': true,
@@ -23,9 +24,6 @@ keystone.init({
     }).engine,
     'cloudinary config': process.env.CLOUDINARY_URL
 });
-
-
-
 
 keystone.set('routes', require('./routes'));
 
