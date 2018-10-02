@@ -1,9 +1,11 @@
- {{>navbar }}
+{{>navbar }}
 
 <div class="container single-painting">
     <div>
+        <a class="back" href="/paintings/{{cat}}">← Return to the collection</a>
         <figure>
-            <img src="{{painting.current.image.secure_url}}" />
+            <img class="painting" src="{{painting.current.image.secure_url}}" data-height="{{painting.current.image.height}}"
+                data-width="{{painting.current.image.width}}" />
             <figcaption>
                 <span class="title">{{painting.current.title}}</span>
                 <span> | </span>
@@ -27,3 +29,45 @@
         </nav>
     </div>
 </div>
+
+<script>
+    (function () {
+        const img = document.querySelector('.painting');
+        const nativeHeight = img.dataset.height;
+        const nativeWidth = img.dataset.width;
+        const startingWidth = img.width;
+        const aspectRatio = (nativeWidth / nativeHeight).toFixed(2);
+        const container = document.querySelector('.single-painting');
+
+
+        const adjustSize = () => {
+            const imgWidth = img.width;
+            const imgHeight = img.height;
+            const currentAspectRatio = (imgWidth / imgHeight).toFixed(2);
+
+            console.log(aspectRatio);
+            console.log(currentAspectRatio);
+
+
+
+            if (currentAspectRatio !== aspectRatio && imgWidth < startingWidth) {
+                console.log("hi")
+                img.style.height = 'auto';
+            } 
+            
+            {{!-- else if (imgWidth >= nativeWidth) {
+                img.style.height = null;
+            } --}}
+
+        }
+
+
+
+
+
+        window.addEventListener("resize", adjustSize);
+        img.addEventListener("load", adjustSize);
+    })()
+
+
+</script>

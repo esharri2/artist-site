@@ -9,7 +9,7 @@ keystone.init({
     'name': 'art site',
     'sass': 'public',
     'static': 'public',
-    'mongo': process.env.MONGO_URI || "mongodb://localhost/your-db",
+    'mongo': process.env.MONGO_URI || "mongodb://localhost/prodco",
     'user model': 'User',
     'auto update': true,
     'auth': true,

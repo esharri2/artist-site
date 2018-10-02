@@ -1,25 +1,25 @@
 .single-painting.container {
     display: flex;
-    // background-color:pink;
     align-items: center;
-    justify-content: center;
-    width: 100%;
+    justify-content: center; // width: 100vw;
     height: 80vh;
-    max-width:none;
-    div {
-        width: 100%; 
-        // background-color:green;
+    max-width: none;
+    .back {
+        color: inherit;
+        text-decoration: none;
+        margin: $nav-height*2 20px 20px 0;
+        display: block;
     }
     figure {
-        width: 100%;
         img {
-            width:auto;
-            height: 70vh;
+            //working one
             margin: 0 auto;
             display: block;
+            height:70vh;
+            width:auto;  
+            max-width:100%;         
         }
         figcaption {
-            // background-color:pink;
             text-align: center;
             padding: 5px 0;
             .title {

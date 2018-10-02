@@ -19,6 +19,7 @@ About.track = {
 About.add({
 	title: { type: String, initial:true },
 	content:{ type: Types.Html, wysiwyg: true },
+	image:{ type: Types.CloudinaryImage }
 });
 
 About.register();

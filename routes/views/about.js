@@ -10,9 +10,10 @@ module.exports = function (req, res) {
     var About = keystone.list('About');
 
     view.on('init', function (next) {
-        var q = About.model.find();
+        var q = About.model.findOne();
         q.exec(function(err, results){
-            locals.about = results[0].content;
+            locals.about = results.content;
+            locals.img = results.image
             next(err);
         })
       })

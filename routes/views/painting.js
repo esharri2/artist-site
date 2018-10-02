@@ -42,7 +42,8 @@ module.exports = function (req, res) {
         ]).then(([total, position, current, previous, following], err) => {
             locals.painting = { total, position: position + 1, current, previous, following };
             // console.log(locals.painting);
-            locals.cat = res ? res.key : "all";        
+            locals.cat = res ? res.key : "all";     
+            console.log(locals.painting.current)   
             next();
         }).catch(function (err) {
             console.log(err.message);
@@ -60,6 +61,7 @@ module.exports = function (req, res) {
         } else {
             getPaintingData(next);
         }
+
     })
     view.render('painting');
 
