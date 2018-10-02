@@ -3,8 +3,8 @@ var Types = keystone.Field.Types;
 
 var About = new keystone.List('About',
 	{
-		nocreate: true,
-		nodelete: true,
+		// nocreate: true,
+		// nodelete: true,
 		label: "About",
 		path: "about",
 		sortable:false,
