@@ -2,11 +2,12 @@
 
 <div class="container categories linklist">
   <h1>Collections</h1>
-  <div class="link">
+  <p><a href="./paintings/all">Click here to see all paintings</a>, or select a collection below.</p>
+  {{!-- <div class="link">
     <a href="./paintings/all">
       <div class="linkLabel">See all paintings</div>
     </a>
-  </div>
+  </div> --}}
   {{#each categories}}
   <div class="link">
     <a href="./paintings/{{key}}">
@@ -18,10 +19,8 @@
         {{#if thumb}}
         <div class="thumb">
           <img src="{{thumb.secure_url}}" />
-
         </div>
-        {{/if}}
-    
+        {{/if}}    
       </div>
     </a>
   </div>

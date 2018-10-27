@@ -248,6 +248,15 @@ nav.navbar {
       text-decoration: none;
       color: #373737; }
 
+.categories p {
+  font-size: 20px;
+  margin: 0 0 20px 0; }
+  .categories p a {
+    color: #4D7EA8;
+    text-decoration: none; }
+  .categories p a:hover {
+    text-decoration: underline; }
+
 .categories .link {
   width: 100%; }
   .categories .link a {

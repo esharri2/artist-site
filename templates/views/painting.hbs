@@ -39,32 +39,17 @@
         const aspectRatio = (nativeWidth / nativeHeight).toFixed(2);
         const container = document.querySelector('.single-painting');
 
-
         const adjustSize = () => {
+            console.log("adjusting size...");
             const imgWidth = img.width;
             const imgHeight = img.height;
-            const currentAspectRatio = (imgWidth / imgHeight).toFixed(2);
-
-            console.log(aspectRatio);
-            console.log(currentAspectRatio);
-
-
-
-            if (currentAspectRatio !== aspectRatio && imgWidth < startingWidth) {
-                console.log("hi")
+            const currentAspectRatio = (imgWidth / imgHeight).toFixed(2);  
+            console.log(currentAspectRatio, aspectRatio, imgWidth, startingWidth);
+            if (currentAspectRatio !== aspectRatio && imgWidth <= startingWidth) {
                 img.style.height = 'auto';
-            } 
-            
-            {{!-- else if (imgWidth >= nativeWidth) {
-                img.style.height = null;
-            } --}}
-
+            }    
         }
-
-
-
-
-
+        adjustSize();
         window.addEventListener("resize", adjustSize);
         img.addEventListener("load", adjustSize);
     })()
