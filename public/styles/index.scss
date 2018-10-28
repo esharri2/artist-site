@@ -61,7 +61,7 @@ body {
     margin: $nav-height*2 auto 0 auto;
     max-width: 600px;
     padding: 0 10px;
-    animation:fadeIn 1s 1 ease-in;
+    animation:fadeIn .5s 1 ease-in;
     h1 {
         margin: 40px 0;
         font-size: 30px;
@@ -116,5 +116,5 @@ ol {
 }
 
 img {
-    animation: fadeIn 1s 1 ease-in;
+    animation: fadeIn .5s 1 ease-in;
 }

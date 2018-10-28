@@ -2,7 +2,7 @@
 
 <div class="container single-painting">
     <div>
-        <a class="back" href="/paintings/{{cat}}">← Return to the collection</a>
+        <a class="back" href="/paintings/{{cat}}"><span class="arrow">←</span> <span>Return to the collection</span></a>
         <figure>
             <img class="painting" src="{{painting.current.image.secure_url}}" data-height="{{painting.current.image.height}}"
                 data-width="{{painting.current.image.width}}" />
@@ -20,11 +20,11 @@
         </figure>
         <nav>
             {{#if painting.previous._id}}
-            <a href="/paintings/painting/{{cat}}/{{painting.previous._id}}">←</a>
+            <a class="arrow" href="/paintings/painting/{{cat}}/{{painting.previous._id}}">←</a>
             {{/if}}
             <span>{{painting.position}} of {{painting.total}}</span>
             {{#if painting.following._id}}
-            <a href="/paintings/painting/{{cat}}/{{painting.following._id}}">→</a>
+            <a class="arrow" href="/paintings/painting/{{cat}}/{{painting.following._id}}">→</a>
             {{/if}}
         </nav>
     </div>

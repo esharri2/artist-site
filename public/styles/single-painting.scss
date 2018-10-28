@@ -7,17 +7,21 @@
     .back {
         color: inherit;
         text-decoration: none;
-        margin: $nav-height*2 20px 20px 0;
+        margin: $nav-height*2 0px 0px 0;
         display: block;
+        span {
+            vertical-align:middle;
+            padding:0;
+        }
     }
     figure {
         img {
             //working one
             margin: 0 auto;
             display: block;
-            height:70vh;
-            width:auto;  
-            max-width:100%;         
+            height: 70vh;
+            width: auto;
+            max-width: 100%;
         }
         figcaption {
             text-align: center;
@@ -32,12 +36,17 @@
         text-align: center; // background-color: aqua;
         padding: 5px 0;
         span {
-            vertical-align: text-top;
+            // vertical-align: text-top;
         }
         a {
-            font-size: 1.5em;
-            text-decoration: none;
-            color: $bg-contrast-1;
+            vertical-align: middle;
         }
+    }
+    .arrow {
+        font-size: 2em;
+        text-decoration: none;
+        color: $bg-contrast-1; // border:solid red 1px;
+        padding: 0 10px; // background-color:$bg-contrast-1;
+        // color:$background;
     }
 }

@@ -69,7 +69,7 @@ body {
         align-items: flex-end; }
   .index h1 {
     font-size: 24px;
-    padding: 0 5px;
+    padding: 0;
     text-transform: uppercase;
     font-weight: 300;
     text-align: center; }
@@ -224,8 +224,11 @@ nav.navbar {
   .single-painting.container .back {
     color: inherit;
     text-decoration: none;
-    margin: 4em 20px 20px 0;
+    margin: 4em 0px 0px 0;
     display: block; }
+    .single-painting.container .back span {
+      vertical-align: middle;
+      padding: 0; }
   .single-painting.container figure img {
     margin: 0 auto;
     display: block;
@@ -241,12 +244,13 @@ nav.navbar {
     margin: 0 auto;
     text-align: center;
     padding: 5px 0; }
-    .single-painting.container nav span {
-      vertical-align: text-top; }
     .single-painting.container nav a {
-      font-size: 1.5em;
-      text-decoration: none;
-      color: #373737; }
+      vertical-align: middle; }
+  .single-painting.container .arrow {
+    font-size: 2em;
+    text-decoration: none;
+    color: #373737;
+    padding: 0 10px; }
 
 .categories p {
   font-size: 20px;
@@ -282,6 +286,9 @@ nav.navbar {
       flex-basis: auto;
       width: 60%; }
 
+.about h1 {
+  text-align: center; }
+
 .about img {
   width: 50%;
   float: left;
@@ -307,7 +314,7 @@ nav.navbar {
   margin: 4em auto 0 auto;
   max-width: 600px;
   padding: 0 10px;
-  animation: fadeIn 1s 1 ease-in; }
+  animation: fadeIn .5s 1 ease-in; }
   .container h1 {
     margin: 40px 0;
     font-size: 30px; }
@@ -354,4 +361,4 @@ ol {
   padding-left: 40px; }
 
 img {
-  animation: fadeIn 1s 1 ease-in; }
+  animation: fadeIn .5s 1 ease-in; }
