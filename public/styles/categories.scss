@@ -1,4 +1,9 @@
 .categories {
+    max-width:600px;
+    min-width:310px;    
+    > p {
+        text-align:center;
+    }
     p {
         font-size: 20px;
         margin: 0 0 20px 0;
@@ -23,21 +28,40 @@
             display: block;
             margin: 25px 0;
         }
-        .linkBody {
-            display: flex;
-            .thumb {
-                flex-basis: auto;
-                width: 40%;
-                flex-grow: 1;
-                img {
-                    width: 100%;
-                }
-            }
+        .linkBody {  
+            display:flex; 
             p {
-                margin: 0;
+                // margin: 0;
                 padding-right: 10px;
-                flex-basis: auto;
-                width: 60%;
+                flex-basis:60%; 
+                flex-grow: 1;
+                // display:inline-block;               
+            }
+            .thumb {
+                flex-basis:40%;
+            }
+            img {
+                width: 100%;
+                // width:40%;
+                // flex-grow: 1;
+                // height:auto;
+
+                // height:auto;
+                // display:inline-block;
+            }
+            
+        }
+        @media (max-width:400px) {
+            .linkBody {
+                display:block;
+                p {
+                    width:100%;
+                    padding: 10px; 
+                }
+                img {
+                    width:100%;
+                    // height:auto;
+                }
             }
         }
     }

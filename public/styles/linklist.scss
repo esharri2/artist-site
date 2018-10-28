@@ -1,9 +1,5 @@
 .linklist {
-    display: flex;
-    flex-direction: column;
-    min-height: 60vh;
-    align-items: center;
-    justify-content: center;
+    min-height: 60vh;   
     .link {
         color: $bg-contrast-1;
         margin: 10px;
