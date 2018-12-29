@@ -5,6 +5,6 @@ exports.initLocals = function (req, res, next) {
 		{ label: 'Galleries', key: 'gallery', href: '/galleries' },
 		{ label: 'Contact', key: 'contact', href: '/contact' },
 	];
-	res.locals.companyName = "Cindy Wagner Fine Art"
+	res.locals.companyName = "Lorem Ipsum Fine Art"
 	next();
 };
